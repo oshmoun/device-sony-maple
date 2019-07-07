@@ -1,4 +1,4 @@
-# Copyright 2014 The Android Open Source Project
+# Copyright 2019 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,5 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/omni_maple.mk
+# Bootanimation
+TARGET_BOOTANIMATION_SIZE := 1080p
 
+# Get the prebuilt list of APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
+# Inherit device parts
+$(call inherit-product, device/sony/maple/aosp_g8141.mk)
+
+# Override Product Name
+PRODUCT_NAME := omni_maple
+PRODUCT_MODEL := Xperia XZ Premium
+
+# Assert ota packages to be equal to ro.product.device or ro.build.product:
+TARGET_OTA_ASSERT_DEVICE := maple
+
+# Inherit rom parts
+$(call inherit-product, device/sony/common/omni.mk)

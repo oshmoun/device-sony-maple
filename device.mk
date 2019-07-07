@@ -87,10 +87,10 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.usb.pid_suffix=1F1
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/sony/yoshino/platform.mk)
+$(call inherit-product, device/sony/yoshino-common/platform.mk)
 
 # copy NFC firmware
-$(call inherit-product-if-exists, vendor/nxp/nxp-vendor.mk)
+$(call inherit-product-if-exists, vendor/sony/nxp/nxp-vendor.mk)
 
 # include board vendor blobs
 $(call inherit-product-if-exists, vendor/sony/yoshino-common/yoshino-partial.mk)

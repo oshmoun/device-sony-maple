@@ -14,7 +14,5 @@
 # limitations under the License.
 #
 
-add_lunch_combo aosp_g8141-eng
-add_lunch_combo aosp_g8141-userdebug
-add_lunch_combo aosp_g8142-eng
-add_lunch_combo aosp_g8142-userdebug
+add_lunch_combo omni_maple-eng
+add_lunch_combo omni_maple-userdebug
